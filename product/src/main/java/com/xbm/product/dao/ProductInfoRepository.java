@@ -9,6 +9,8 @@ import java.util.List;
 @Repository
 public interface ProductInfoRepository extends JpaRepository<ProductInfo,String> {
 
-    List<ProductInfo> findAllByProductStatus(int productStatus );
+    List<ProductInfo> findByProductStatus(int productStatus );
+
+    List<ProductInfo> findByProductIdIn(List<String> productIdList);
 
 }

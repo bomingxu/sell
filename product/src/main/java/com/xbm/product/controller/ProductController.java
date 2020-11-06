@@ -1,5 +1,6 @@
 package com.xbm.product.controller;
 
+import com.xbm.product.dto.CartDTO;
 import com.xbm.product.model.ProductCategory;
 import com.xbm.product.model.ProductInfo;
 import com.xbm.product.service.ProductCategoryService;
@@ -9,20 +10,17 @@ import com.xbm.product.vo.ProductInfoVo;
 import com.xbm.product.vo.ProductVo;
 import com.xbm.product.vo.ResultVo;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/productController")
 @Api(tags = "商品相关接口")
 public class ProductController {
 
@@ -32,12 +30,6 @@ public class ProductController {
     @Autowired
     private ProductCategoryService productCategoryService;
 
-    /**
-     * 1.查询商品列表
-     * 2.获取类目type列表
-     * 3.查询类目列表
-     * 4.构造数据
-     */
     @ApiOperation("查询在架商品列表")
     @GetMapping("/list")
     public ResultVo<ProductVo> list(){
@@ -65,6 +57,17 @@ public class ProductController {
             productVoList.add(productVo);
         }
         return ResultVoUtil.success(productVoList);
+    }
 
+    @ApiOperation("通过ID集合查询商品列表")
+    @PostMapping("/listForOrder")
+    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
+        return productInfoService.findListByProductIdIn(productIdList);
+    }
+
+    @ApiOperation("扣商品库存")
+    @PostMapping("/descreaseStock")
+    public void descreaseStock(@RequestBody List<CartDTO> cartDTOList){
+        productInfoService.decreaseStock(cartDTOList);
     }
 }

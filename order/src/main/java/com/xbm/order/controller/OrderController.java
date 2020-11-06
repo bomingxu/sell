@@ -43,7 +43,7 @@ public class OrderController {
             log.error("【创建订单】购物车为空");
             throw new OrderException(ResultEnum.CART_EMPTY);
         }
-
+        //创建订单
         OrderDTO result = orderService.createOrder(orderDTO);
         Map<String,String> resultMap = new HashMap<>();
         resultMap.put("orderId",result.getOrderId());
