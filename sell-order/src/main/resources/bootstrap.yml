@@ -1,0 +1,12 @@
+
+server:
+  port: 8002
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        service-id: CONFIG
+        enabled: true
+      profile: dev

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:bomingxu/sell.git
+          password: aa19920528
+          username: 13501057119@163.com
+          basedir: E:\app\sell\config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8003
