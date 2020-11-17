@@ -10,4 +10,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 girl:
   name: lili
-  age: 18
+  age: 19
