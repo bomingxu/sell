@@ -4,6 +4,12 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    config:
+      discovery:
+        service-id: CONFIG
+        enabled: true
+      profile: dev
   rabbitmq:
     host: localhost
     port: 5672
