@@ -1,8 +1,8 @@
 package com.xbm.product.client;
 
 
-import com.xbm.product.common.DescreaseStockInput;
-import com.xbm.product.common.ProductInfoOutput;
+import com.xbm.sell.common.model.DescreaseStockInput;
+import com.xbm.sell.common.model.ProductInfoOutput;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

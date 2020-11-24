@@ -3,13 +3,11 @@ package com.xbm.order.convert;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.xbm.order.dto.OrderDTO;
-import com.xbm.order.enums.ResultEnum;
-import com.xbm.order.exception.OrderException;
 import com.xbm.order.form.OrderForm;
 import com.xbm.order.model.OrderDetail;
-import org.springframework.beans.BeanUtils;
+import com.xbm.sell.common.enums.ResultEnum;
+import com.xbm.sell.common.exception.SellException;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +26,7 @@ public class OrderForm2OrderDTO {
             orderDetailList = gson.fromJson(orderForm.getItems(), new TypeToken<List<OrderDetail>>(){}.getType());
         }catch (Exception e){
             System.out.println("OrderForm2OrderDTO---->convert--->参数转换异常"+orderForm.getItems());
-            throw new OrderException(ResultEnum.PARAMS_ERROR);
+            throw new SellException(ResultEnum.PARAMS_ERROR);
         }
         orderDTO.setOrderDetailList(orderDetailList);
         return orderDTO;

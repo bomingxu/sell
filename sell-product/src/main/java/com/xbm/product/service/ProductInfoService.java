@@ -1,6 +1,6 @@
 package com.xbm.product.service;
 
-import com.xbm.product.common.DescreaseStockInput;
+import com.xbm.sell.common.model.DescreaseStockInput;
 import com.xbm.product.model.ProductInfo;
 
 import java.util.List;

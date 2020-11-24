@@ -34,6 +34,7 @@
         <mysql-connector-java.version>8.0.11</mysql-connector-java.version>
         <product-client.version>1.0-SNAPSHOT</product-client.version>
         <spring-cloud-starter-openfeign.version>2.0.0.M3</spring-cloud-starter-openfeign.version>
+        <lombok.version>1.18.16</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -74,6 +75,12 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${spring-cloud-starter-openfeign.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -7,7 +7,9 @@
         <artifactId>sell</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>sell-common-config</artifactId>
+    <artifactId>common-config</artifactId>
+    <name>common-config</name>
+    <description>Demo project for Spring Boot</description>
 
     <packaging>jar</packaging>
 
@@ -25,6 +27,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
     </dependencies>
 

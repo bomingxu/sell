@@ -1,14 +1,14 @@
 package com.xbm.product.controller;
 
-import com.xbm.product.common.DescreaseStockInput;
+import com.xbm.sell.common.model.DescreaseStockInput;
+import com.xbm.sell.common.utils.ResultVoUtil;
+import com.xbm.sell.common.vo.ResultVo;
 import com.xbm.product.model.ProductCategory;
 import com.xbm.product.model.ProductInfo;
 import com.xbm.product.service.ProductCategoryService;
 import com.xbm.product.service.ProductInfoService;
-import com.xbm.product.utils.ResultVoUtil;
 import com.xbm.product.vo.ProductInfoVo;
 import com.xbm.product.vo.ProductVo;
-import com.xbm.product.vo.ResultVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

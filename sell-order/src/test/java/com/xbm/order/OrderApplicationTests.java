@@ -9,10 +9,6 @@ import java.util.Date;
 @SpringBootTest
 class OrderApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
-
 
 
 
