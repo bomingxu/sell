@@ -1,5 +1,7 @@
 package com.xbm.order.service.iml;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.xbm.order.dao.OrderDetailRepository;
 import com.xbm.order.dao.OrderMasterRepository;
 import com.xbm.order.dto.OrderDTO;
@@ -42,6 +44,9 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private ProductClient productClient;
 
+    @HystrixCommand(commandProperties = @HystrixProperty(
+           name = "execution.isolation.thread.timeoutInMilliseconds",value = "4000"
+   ))
     @Transactional
     @Override
     public OrderDTO createOrder(OrderDTO orderDTO) {

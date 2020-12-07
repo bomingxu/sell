@@ -3,13 +3,12 @@ package com.xbm.product.client;
 
 import com.xbm.sell.common.model.DescreaseStockInput;
 import com.xbm.sell.common.model.ProductInfoOutput;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 import java.util.List;
 
-@FeignClient("product")
+@FeignClient(name = "product",fallback = ProductClientFallBack.class)
 public interface ProductClient {
 
     @PostMapping("/productController/listForOrder")

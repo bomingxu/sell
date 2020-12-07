@@ -5,16 +5,11 @@
     <parent>
         <groupId>com.xbm</groupId>
         <artifactId>sell</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.xbm</groupId>
     <artifactId>api-gateway</artifactId>
     <name>api-gateway</name>
-
-    <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.M2</spring-cloud.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -39,6 +34,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+            <version>30.0-jre</version>
         </dependency>
 
         <dependency>
@@ -50,6 +46,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
+
     </dependencies>
 
 </project>

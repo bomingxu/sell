@@ -14,13 +14,13 @@ public interface StreamClient {
     @Input(INPUT)
     SubscribableChannel input();
 
-    @Output(INPUT)
+    @Output(INPUT2)
     MessageChannel output();
 
-    @Input(INPUT2)
+    /*@Input(INPUT2)
     SubscribableChannel input2();
 
     @Output(INPUT2)
-    MessageChannel output2();
+    MessageChannel output2();*/
 
 }
